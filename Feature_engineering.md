@@ -1,10 +1,8 @@
 ---
 layout: page
-title: feature engieering
+title: feature
 permalink: /feature-engieering/
 ---
-
-
 
 ```python
 import pandas as pd
