@@ -1,7 +1,7 @@
 ---
 layout: page
-title: fn
-permalink: /fn/
+title: feature engieering
+permalink: /feature-engieering/
 ---
 
 
