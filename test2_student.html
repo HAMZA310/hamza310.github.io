@@ -1,16 +1,14 @@
 ---
 layout: page
-title: Test 1 Solution
-permalink: /test1-solution/
+title: Test 2
+permalink: /test2/
 ---
-
-
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Test1</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>test2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14266,19 +14264,50 @@ a.anchor-link {
 
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Before you turn this problem in, make sure everything runs as expected. First, <strong>restart the kernel</strong> (in the menubar, select Kernel$\rightarrow$Restart) and then <strong>run all cells</strong> (in the menubar, select Cell$\rightarrow$Run All).</p>
+<p>Make sure you fill in any place that says <code>YOUR CODE HERE</code> or "YOUR ANSWER HERE", as well as your name and collaborators below:</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">NAME</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">COLLABORATORS</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<hr>
+
+</div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p><code>Feel free to go online. In fact, we encourage you to read documentations where needed. However, you may not collaborate with anybody. To certify that you didn't collaborate with anyone you'll write 'Nobody' in 'collaborators' above.</code></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[289]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">assert_equal</span>
-<span class="kn">from</span> <span class="nn">nose.tools</span> <span class="kn">import</span> <span class="n">assert_not_equal</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Set up library imports. These imports also give you pointers on how to approach a question.</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_boston</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVR</span>
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 
      </div>
@@ -14289,38 +14318,26 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>This test covers Python, Numpy and Pandas. There are 10 questions. Questions are of varying difficulty and not ordered randomly. You may see a difficult question earlier and an easier later. Feel free to go online; in fact you're encouraged to read official documentation. Yet, collaboration with your peers is not allowed under any circumstances. To ensure fairness, we'll use sophisticated plagiarism checks in this test and the tests to come, and the autograder might assign you a 0 without any warning if plagiarism detected. Not all questions carry equal marks. You may not necessarily find a question carrying more marks more difficult.</p>
-<h3 id="Useful-Points:">Useful Points:<a class="anchor-link" href="#Useful-Points:">&#182;</a></h3><ul>
-<li>We'll call the row at index 0 <code>zeroth row</code> instead of <code>first row</code>. Likewise for columns.</li>
-<li>Each question contains both visible tests and hidden tests. To earn credit, you have to pass all tests. Failing at least one test will earn no credit for that question.</li>
-<li>The autograder will automatically remove any changes you make outside the sections where you're explicitly told to write your code. For example, if you modify the testcases- before autograding- autograder will replace your modifications with the original version.</li>
-</ul>
-
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">&#182;</a></h3><p>In the input string, if you see an alphabet that is lower case, convert it to upper case. if the alphabet is upper case, convert it to lower case. 
-Any non-alphabet char e.g. $53,*#@!$ should be returned as it is.</p>
-<p>Try to solve this in one line using list comprehension.</p>
+<h3 id="Question-1">Question 1<a class="anchor-link" href="#Question-1">&#182;</a></h3><p><code>(1 point)</code></p>
+<p>Go to this <a href="https://playground.tensorflow.org/#activation=tanh&amp;batchSize=10&amp;dataset=xor&amp;regDataset=reg-plane&amp;learningRate=0.03&amp;regularizationRate=0&amp;noise=0&amp;networkShape=1,2&amp;seed=0.71704&amp;showTestData=false&amp;discretize=false&amp;percTrainData=50&amp;x=true&amp;y=true&amp;xTimesY=false&amp;xSquared=false&amp;ySquared=false&amp;cosX=false&amp;sinX=false&amp;cosY=false&amp;sinY=false&amp;collectStats=false&amp;problem=classification&amp;initZero=false&amp;hideText=false">link</a> and report the bare-minimum of features needed to classify the dataset shown in the link. Recall that we're generally interested in the smallest set of features to feed our algorithm.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[66]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># swap cases</span>
-<span class="k">def</span> <span class="nf">swap_cases</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;arg: string </span>
-<span class="sd">       return: string (cases swapped)</span>
-<span class="sd">       </span>
-<span class="sd">       Staff&#39;s solution contains one line of code. </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">minimum_features_to_classify_dataset</span><span class="p">():</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    arg: None</span>
+<span class="sd">    return: list (containing strings)</span>
+<span class="sd">    </span>
+<span class="sd">    Features are called x1, x2, x1^2, x2^2, x1x2. Return your answer in a list of string. </span>
+<span class="sd">    For example, if your answer is x1 and x2, return [&#39;x1&#39;, &#39;x2&#39;]</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">l</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">if</span> <span class="n">l</span><span class="o">.</span><span class="n">islower</span><span class="p">()</span> <span class="k">else</span> <span class="n">l</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="k">for</span> <span class="n">l</span> <span class="ow">in</span> <span class="n">s</span><span class="p">])</span>
-    <span class="c1">### END SOLUTION</span>
+    <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14331,93 +14348,11 @@ Any non-alphabet char e.g. $53,*#@!$ should be returned as it is.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[43]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">swap_cases</span><span class="p">(</span><span class="s1">&#39;ABcDef&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;abCdEF&#39;</span>
-<span class="k">assert</span> <span class="n">swap_cases</span><span class="p">(</span><span class="s1">&#39;hl4434*9889DdfF&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;HL4434*9889dDFf&#39;</span>
-<span class="k">assert</span> <span class="n">swap_cases</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span>
-<span class="n">assert_not_equal</span><span class="p">(</span><span class="n">swap_cases</span><span class="p">(</span><span class="s1">&#39;ABC&#39;</span><span class="p">),</span> <span class="s1">&#39;ABC&#39;</span><span class="p">)</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="k">assert</span> <span class="n">swap_cases</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;h&#39;</span>
-<span class="k">assert</span> <span class="n">swap_cases</span><span class="p">(</span><span class="s1">&#39;***(((())))&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;***(((())))&#39;</span>
-<span class="n">assert_not_equal</span><span class="p">(</span><span class="n">swap_cases</span><span class="p">(</span><span class="s1">&#39;Hello&#39;</span><span class="p">),</span> <span class="s1">&#39;Hello&#39;</span><span class="p">)</span>
-<span class="k">assert</span> <span class="n">swap_cases</span><span class="p">(</span><span class="s1">&#39;DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))DSFAsflaskdflsakflas***(((())))&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))dsfaSFLASKDFLSAKFLAS***(((())))&#39;</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Question-2">Question 2<a class="anchor-link" href="#Question-2">&#182;</a></h3><p>Given a list of numbers, find square of positive even numbers and return their sum.</p>
-<p>You should use list comprehension.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[450]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">sum_of_sqs_of_pos_even_elms_of_list</span><span class="p">(</span><span class="n">_list</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;args: list </span>
-<span class="sd">       return: int</span>
-<span class="sd">       </span>
-<span class="sd">    Staff&#39;s solution contains one line of code. </span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">return</span> <span class="nb">sum</span><span class="p">([</span><span class="n">elm</span><span class="o">**</span><span class="mi">2</span> <span class="k">for</span> <span class="n">elm</span> <span class="ow">in</span> <span class="n">_list</span> <span class="k">if</span> <span class="p">(</span><span class="ow">not</span> <span class="n">elm</span> <span class="o">%</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">elm</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)])</span>
-    <span class="c1">### END SOLUTION</span>
-    
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[450]:</div>
-
-
-
-
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
-<pre>4</pre>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[461]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="n">sum_of_sqs_of_pos_even_elms_of_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span> <span class="o">==</span> <span class="mi">20</span>
-<span class="k">assert</span> <span class="n">sum_of_sqs_of_pos_even_elms_of_list</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">==</span> <span class="mi">72</span>
-<span class="k">assert</span> <span class="n">sum_of_sqs_of_pos_even_elms_of_list</span><span class="p">([</span><span class="o">-</span><span class="mi">6</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">2.4</span><span class="p">,</span><span class="mf">204.2</span><span class="p">])</span> <span class="o">==</span> <span class="mi">20</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="k">assert</span> <span class="n">sum_of_sqs_of_pos_even_elms_of_list</span><span class="p">([</span><span class="mf">5.8</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
-<span class="k">assert</span> <span class="n">sum_of_sqs_of_pos_even_elms_of_list</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="mi">0</span>
-<span class="k">assert</span> <span class="n">sum_of_sqs_of_pos_even_elms_of_list</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> <span class="o">==</span> <span class="mi">56</span>
-<span class="c1">### END HIDDEN TESTS</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## This test is only checking whether your list contains  a string. Other tests are hidden</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">minimum_features_to_classify_dataset</span><span class="p">()[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">str</span><span class="p">)</span> 
 </pre></div>
 
      </div>
@@ -14442,27 +14377,18 @@ Any non-alphabet char e.g. $53,*#@!$ should be returned as it is.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Question-3">Question 3<a class="anchor-link" href="#Question-3">&#182;</a></h3><p>Extract the 2nd last row of the given numpy array.</p>
+<h3 id="Question-2">Question 2<a class="anchor-link" href="#Question-2">&#182;</a></h3><p><code>(1 point)</code></p>
+<p>Load boston data using the library imported at top.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[67]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">extract_2nd_last_row</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;arg: ndarray</span>
-<span class="sd">       You can assume that ndarray has at least 2 rows.</span>
-<span class="sd">        </span>
-<span class="sd">       return: ndarray </span>
-<span class="sd">       </span>
-<span class="sd">        Staff&#39;s solution contains one line of code. </span>
-<span class="sd">       </span>
-<span class="sd">       &#39;&#39;&#39;</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">return</span> <span class="n">arr</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
-    <span class="c1">### END SOLUTION</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14473,11 +14399,11 @@ Any non-alphabet char e.g. $53,*#@!$ should be returned as it is.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[69]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">5</span><span class="p">,</span><span class="mi">52</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">6</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">extract_2nd_last_row</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">6</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">2</span><span class="p">]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_data_boston</span> <span class="o">=</span> <span class="n">get_boston_data</span><span class="p">()</span>
+<span class="k">assert</span> <span class="nb">list</span><span class="p">(</span><span class="n">all_data_boston</span><span class="o">.</span><span class="n">keys</span><span class="p">())</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="s1">&#39;target&#39;</span><span class="p">,</span> <span class="s1">&#39;feature_names&#39;</span><span class="p">,</span> <span class="s1">&#39;DESCR&#39;</span><span class="p">,</span> <span class="s1">&#39;filename&#39;</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -14488,39 +14414,47 @@ Any non-alphabet char e.g. $53,*#@!$ should be returned as it is.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Question-4">Question 4<a class="anchor-link" href="#Question-4">&#182;</a></h3><p>Give an ndarray of shape $n\times m  \ where \ n, m &gt;= 2$, return an ndarray of shape $(n*m) \times m$ which contains either the zeroth or the first row of the input array such that if the element at index $(i,j)$ in the input array is an <code>even</code> number then the $(i,j)th$  row of the output array will get the <code>zeroth row</code> of the input. Siimilarly, if the element at index $(i,j)$ in the input array is an <code>odd</code> number then the $(i+j)th$ row of the output array will get the <code>first row</code> of the input. See an example below for clarifications:</p>
-<div class="highlight"><pre><span></span><span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]])</span> <span class="c1"># input array of shape (2,3) i.e. (n,m)</span>
-<span class="n">get_first_and_second_rows</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span> <span class="c1"># Function called. observe the returned array printed below.</span>
-<span class="n">array</span><span class="p">([[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span> <span class="c1"># output array of shape (6,3) i.e. ((n*m), m) i.e. (2*3,3)</span>
-       <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">]])</span>
-
-<span class="s2">&quot;The input array &#39;arr2&#39; at index (0,0) contains 1 (odd number), so, zeroth row (i+j is 0, hence the zeroth row) of the output array [ 4,  2,  4] is the first row in the input array [ 4,  2,  4]. Similarly, The input array &#39;arr2&#39; at index (0,2) contains 1 (odd number), so (0+2)th row of the output array [ 1, 23,  4] is the zeroth row of the input array.</span>
-</pre></div>
+<h3 id="Raw-Features">Raw Features<a class="anchor-link" href="#Raw-Features">&#182;</a></h3><p>Data as it.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[129]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_zeroth_and_first_rows</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">raw_features</span> <span class="o">=</span> <span class="n">get_boston_data</span><span class="p">()</span><span class="o">.</span><span class="n">data</span> <span class="c1"># ndarray of shp</span>
+<span class="n">raw_features</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Question-3">Question 3<a class="anchor-link" href="#Question-3">&#182;</a></h3><p><code>(2 points)</code></p>
+<p>Store data into a pandas dataframe with correct column names.</p>
+<p>Hint: all_data_boston</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">get_df</span><span class="p">(</span><span class="n">all_data_boston</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    arg: ndarray of shape (n,m) where n and m are at least 2.</span>
+<span class="sd">    args: dict containing boston dataset return by </span>
+<span class="sd">    return: pd dataframe</span>
 <span class="sd">    </span>
-<span class="sd">    return ndarray of shape ((n*m), m)</span>
-<span class="sd">    </span>
-<span class="sd">    Staff&#39;s solution contains one line of code. </span>
-<span class="sd">    </span>
+<span class="sd">    get data into a dataframe</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">return</span> <span class="n">a</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">a</span><span class="o">%</span><span class="k">2</span>]).reshape(-1)]
-    <span class="c1">### END SOLUTION</span>
+    <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14531,60 +14465,67 @@ Any non-alphabet char e.g. $53,*#@!$ should be returned as it is.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[172]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Test shapes returned</span>
-<span class="n">arr3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">40</span><span class="p">,</span><span class="mi">60</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
-<span class="n">assert_equal</span><span class="p">(</span><span class="n">get_zeroth_and_first_rows</span><span class="p">(</span><span class="n">arr3</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="mi">2400</span><span class="p">,</span> <span class="mi">60</span><span class="p">))</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">get_df</span><span class="p">(</span><span class="n">all_data_boston</span><span class="p">)</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;CRIM&#39;</span><span class="p">,</span> <span class="s1">&#39;ZN&#39;</span><span class="p">,</span> <span class="s1">&#39;INDUS&#39;</span><span class="p">,</span> <span class="s1">&#39;CHAS&#39;</span><span class="p">,</span> <span class="s1">&#39;NOX&#39;</span><span class="p">,</span> <span class="s1">&#39;RM&#39;</span><span class="p">,</span> <span class="s1">&#39;AGE&#39;</span><span class="p">,</span> <span class="s1">&#39;DIS&#39;</span><span class="p">,</span> <span class="s1">&#39;RAD&#39;</span><span class="p">,</span> <span class="s1">&#39;TAX&#39;</span><span class="p">,</span>
+       <span class="s1">&#39;PTRATIO&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;LSTAT&#39;</span><span class="p">]</span>
+</pre></div>
 
-<span class="c1"># Test each row.</span>
-<span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">get_zeroth_and_first_rows</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                                                     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                                                     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                                                     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-                                                     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-                                                     <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
-                                                     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                                                     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span>
-                                                     <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">]]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+     </div>
+</div>
+</div>
+</div>
 
-<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">40</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">get_zeroth_and_first_rows</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">4</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">],</span>
-       <span class="p">[</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span>  <span class="mi">4</span><span class="p">]]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">arrh1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int16</span><span class="p">)</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">get_zeroth_and_first_rows</span><span class="p">(</span><span class="n">arrh1</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
-                                                   <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_head</span> <span class="o">=</span> <span class="n">get_df</span><span class="p">(</span><span class="n">all_data_boston</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<span class="n">df_head</span>
+</pre></div>
 
+     </div>
+</div>
+</div>
+</div>
 
-<span class="c1">### END HIDDEN TESTS</span>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><code>What does each column name mean?</code> <a href="https://scikit-learn.org/stable/datasets/index.html#boston-house-prices-dataset">Answer</a></p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">labels</span>  <span class="o">=</span> <span class="n">all_data_boston</span><span class="o">.</span><span class="n">target</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Labels">Labels<a class="anchor-link" href="#Labels">&#182;</a></h3><p>MEDV Median value of owner-occupied homes in $1000’s</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># First 10 labels</span>
+<span class="n">labels</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -14609,27 +14550,33 @@ Any non-alphabet char e.g. $53,*#@!$ should be returned as it is.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Questions-5,-6-and-7-are-based-on-the-following-information:"><code>Questions 5, 6 and 7 are based on the following information</code>:<a class="anchor-link" href="#Questions-5,-6-and-7-are-based-on-the-following-information:">&#182;</a></h3><p>There are $n$ students in a university. Each student is taking $m$ courses. At the end of the semester, scores of each student in $m$ final exams are reported in an ndarray of shape $(m,n)$. where $m,n \geq 2$</p>
-<h3 id="Question-5:">Question 5:<a class="anchor-link" href="#Question-5:">&#182;</a></h3><p>Calculate average (mean) and standard deviation of marks of each student in all final exams.
-You may not use any loops.</p>
+<h3 id="Question-4">Question 4<a class="anchor-link" href="#Question-4">&#182;</a></h3><p><code>(2 points)</code></p>
+<p><code>(A question on Sklearn)</code></p>
+<p>We'll oberve the performance of our ML model on a chunk of data which it has not previously seen. To this end, divide the raw features into parts- call one training set and other test set. We'll see more of train-test split inn future as well. Read the documentation on this sklearn <a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.train_test_split.html">function</a> for more information.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[224]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mean_and_dev_students</span><span class="p">(</span><span class="n">marks</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">split</span><span class="p">(</span><span class="n">raw_features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">_test_size</span><span class="p">,</span> <span class="n">_random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    args: ndarray</span>
-<span class="sd">    return: tuple of ndarrays (mean_arr, std_arr)</span>
-<span class="sd">    </span>
-<span class="sd">    Staff&#39;s solution contains one line of code. </span>
+<span class="sd">    args: raw_features  -&gt; numpy.ndarray </span>
+<span class="sd">          labels -&gt; pandas.core.series.Series</span>
+<span class="sd">          _test_size -&gt; float (between 0 to 1)</span>
+<span class="sd">          _random_state -&gt; int (to reproduce the same results across multiple runs)</span>
+<span class="sd">          </span>
+<span class="sd">    return: </span>
+<span class="sd">        X_train -&gt; numpy.ndarray</span>
+<span class="sd">        y_train -&gt; numpy.ndarray</span>
+<span class="sd">        y_train -&gt; pandas.core.series.Series</span>
+<span class="sd">        y_test -&gt; pandas.core.series.Series</span>
+
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="c1">### END SOLUTION</span>
+    <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14640,22 +14587,31 @@ You may not use any loops.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[284]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_students</span><span class="p">(</span><span class="n">arr1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">3.</span><span class="p">,</span> <span class="mf">16.</span><span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_students</span><span class="p">(</span><span class="n">arr1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">18.</span><span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="c1"># Floating point equality could be problematic. More on that in a computer systems course :) </span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_students</span><span class="p">(</span><span class="n">arr1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">0.85</span><span class="p">,</span> <span class="mi">185</span><span class="p">]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">24</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">43</span><span class="p">,</span><span class="mi">442</span><span class="p">,</span><span class="mi">34</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_students</span><span class="p">(</span><span class="n">arr2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">20.</span><span class="p">,</span> <span class="mf">173.</span><span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_students</span><span class="p">(</span><span class="n">arr2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">20.5</span><span class="p">,</span> <span class="mf">173.5</span><span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_train_raw_feats</span><span class="p">,</span> <span class="n">x_test_raw_feats</span><span class="p">,</span> <span class="n">y_train_raw_feats</span><span class="p">,</span> <span class="n">y_test_raw_feats</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span>\
+                                                        <span class="n">raw_features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">_test_size</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">x_train_raw_feats</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">354</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">x_test_raw_feats</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="p">(</span><span class="mi">152</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
 
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_students</span><span class="p">(</span><span class="n">arr2</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">12.</span><span class="p">,</span> <span class="mf">190.</span> <span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_students</span><span class="p">(</span><span class="n">arr2</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">12.5</span><span class="p">,</span> <span class="mf">190.5</span> <span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">y_train_raw_feats</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">x_train_raw_feats</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="k">assert</span> <span class="n">y_test_raw_feats</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">y_test_raw_feats</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
 
-<span class="c1">### END HIDDEN TESTS</span>
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_train_raw_feats</span><span class="p">,</span> <span class="n">x_test_raw_feats</span><span class="p">,</span> <span class="n">y_train_raw_feats</span><span class="p">,</span> <span class="n">y_test_raw_feats</span> <span class="o">=</span> <span class="n">split</span><span class="p">(</span>\
+                                                        <span class="n">raw_features</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">_test_size</span><span class="o">=.</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14666,26 +14622,62 @@ You may not use any loops.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Question-6:">Question 6:<a class="anchor-link" href="#Question-6:">&#182;</a></h3><p><code>copied from above</code>: 'There are $n$ students in a university. Each student is taking $m$ courses. At the end of the semester, scores of each student in $m$ final exams are reported in an ndarray of shape $(m,n)$. where $m,n \geq 2$'</p>
-<p>Calculate average (mean) and standard deviation of marks obtained in each final exam.</p>
+<h3 id="Importance-of-Feature-engineering.">Importance of Feature engineering.<a class="anchor-link" href="#Importance-of-Feature-engineering.">&#182;</a></h3><p>We'll use an algorithm support vector regression (SVR). For now, you may assume svr is just another ML algorithm. You'll observe how svr performs better if features are engineered well.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[287]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mean_and_dev_exams</span><span class="p">(</span><span class="n">marks</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    args: ndarray</span>
-<span class="sd">    return: tuple of ndarrays (mean_arr, std_arr)</span>
-<span class="sd">    </span>
-<span class="sd">    Staff&#39;s solution contains one line of code. </span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">marks</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="c1">### END SOLUTION</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Question-5">Question 5<a class="anchor-link" href="#Question-5">&#182;</a></h3><p><code>(2 points)</code></p>
+<p><code>(A question on Sklearn)</code></p>
+<p>As mentioned above, you don't need to know anything about svr to answer this question. This question will test you on how well you can read documentation (of sklearn in this case)- like the question 4.
+In this question you'll write return an object of type <code>sklearn.svm._classes.SVR</code> which is fitted (trained) on x_train (raw features) and y_train (labels). We can use the svr returned by this function to make predictions.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html">Documentation on SVR</a></p>
+<p>You may also find documentation on <a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR.fit">fit method</a> helpful.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Fit">Fit<a class="anchor-link" href="#Fit">&#182;</a></h3><p>Fitting on unscaled x_train_raw_feats and y_train_raw_feats by calling the function you implemented above.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">svr_model</span> <span class="o">=</span> <span class="n">fit_model</span><span class="p">(</span><span class="n">x_train_raw_feats</span><span class="p">,</span> <span class="n">y_train_raw_feats</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14696,18 +14688,159 @@ You may not use any loops.</p>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[288]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_exams</span><span class="p">(</span><span class="n">arr1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">22.5</span><span class="p">,</span>  <span class="mf">3.5</span><span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_exams</span><span class="p">(</span><span class="n">arr1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">19.5</span><span class="p">,</span>  <span class="mf">0.5</span><span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">24</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">43</span><span class="p">,</span><span class="mi">442</span><span class="p">,</span><span class="mi">34</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_exams</span><span class="p">(</span><span class="n">arr2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="mf">33.5</span><span class="p">,</span> <span class="mf">237.5</span><span class="p">,</span>  <span class="mf">19.</span><span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">mean_and_dev_exams</span><span class="p">(</span><span class="n">arr2</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>  <span class="mf">9.5</span><span class="p">,</span> <span class="mf">204.5</span><span class="p">,</span>  <span class="mf">15.</span> <span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="nb">str</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">svr_model</span><span class="p">))</span> <span class="o">==</span> <span class="s2">&quot;&lt;class &#39;sklearn.svm._classes.SVR&#39;&gt;&quot;</span>
+</pre></div>
 
-<span class="c1">### END HIDDEN TESTS</span>
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>To see how well, svr performed on the unseen chunk of data (x_test_raw_feats, y_test_raw_feats), we'll use <a href="https://en.wikipedia.org/wiki/Coefficient_of_determination">coefficient of determination</a> as a measure- called <a href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVR.html#sklearn.svm.SVR.score">score</a> (in range 0 to 1). Higher this score, better the performance.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">svr_model</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test_raw_feats</span><span class="p">,</span> <span class="n">y_test_raw_feats</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You should see a score of ~0.28. Let's try to improve this score.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Question-6">Question 6<a class="anchor-link" href="#Question-6">&#182;</a></h3><p><code>(5 points)</code></p>
+<h3 id="Zero--Mean-and-unit-variace-scaling-using-numpy-only.">Zero  Mean and unit variace scaling using numpy only.<a class="anchor-link" href="#Zero--Mean-and-unit-variace-scaling-using-numpy-only.">&#182;</a></h3><p>Given an x_train (which are raw features in an ndarray), you'll standard scale them, such that each feature (column) in x_train has mean 0 and variance 1. Specifically, for each feature subtract its mean and divide by its standard deviation. Note that you may only use numpy functions for this one. You may not use any sklearn functions. Fill in the two functions below in the class.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">class</span> <span class="nc">_Standard_Scaler</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mean_each_feat</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># mean of each feature- ndarray </span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">std_dev_each_feat</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        
+    <span class="k">def</span> <span class="nf">compute_mean_and_std_dev</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        args: x -&gt; ndarray (here, containing scaled features) of shape (m,n)</span>
+<span class="sd">        return: None (compute mean and standard deviation of each feature and</span>
+<span class="sd">                      store them in self.mean_each_feat and self.std_dev_each_feat respectively)</span>
+
+<span class="sd">        you may onle use numpy functions.</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+
+        <span class="c1"># YOUR CODE HERE</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+        
+    <span class="k">def</span> <span class="nf">get_params</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean_each_feat</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">std_dev_each_feat</span>
+    
+    <span class="k">def</span> <span class="nf">get_scaled_input</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">_mean</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">_std</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        args: None</span>
+<span class="sd">        return: scaled x such that each feature has 0 mean and unit var (also unit std)</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">_mean</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_mean</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mean_each_feat</span>
+        <span class="k">if</span> <span class="n">_std</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">_std</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">std_dev_each_feat</span>
+            
+        <span class="c1"># YOUR CODE HERE</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_scaler</span> <span class="o">=</span> <span class="n">_Standard_Scaler</span><span class="p">(</span><span class="n">x_train_raw_feats</span><span class="p">)</span>
+<span class="n">_scaler</span><span class="o">.</span><span class="n">compute_mean_and_std_dev</span><span class="p">()</span>
+<span class="n">_scaler</span><span class="o">.</span><span class="n">get_scaled_input</span><span class="p">()</span>
+
+<span class="k">assert</span> <span class="n">_scaler</span><span class="o">.</span><span class="n">get_scaled_input</span><span class="p">()</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">x_train_raw_feats</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">scaled_feats</span> <span class="o">=</span> <span class="n">_scaler</span><span class="o">.</span><span class="n">get_scaled_input</span><span class="p">()</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">scaled_feats</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.41425879</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.50512499</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.29214218</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28154625</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.85108479</span><span class="p">,</span>
+         <span class="mf">0.14526384</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.365584</span>  <span class="p">,</span>  <span class="mf">1.08162833</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.74617905</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.11279004</span><span class="p">,</span>
+         <span class="mf">0.18727079</span><span class="p">,</span>  <span class="mf">0.39651419</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.01531611</span><span class="p">],</span>
+       <span class="p">[</span><span class="o">-</span><span class="mf">0.40200818</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.50512499</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16208345</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28154625</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08796708</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.20840082</span><span class="p">,</span>  <span class="mf">0.13394078</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.48787608</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.39846419</span><span class="p">,</span>  <span class="mf">0.15008778</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.21208981</span><span class="p">,</span>  <span class="mf">0.3870674</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.05366252</span><span class="p">]]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_scaler</span> <span class="o">=</span> <span class="n">_Standard_Scaler</span><span class="p">(</span><span class="n">x_train_raw_feats</span><span class="p">)</span>
+<span class="n">_scaler</span><span class="o">.</span><span class="n">compute_mean_and_std_dev</span><span class="p">()</span>
+<span class="n">scaled_feats_x_train</span> <span class="o">=</span> <span class="n">_scaler</span><span class="o">.</span><span class="n">get_scaled_input</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_scaler</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14732,163 +14865,19 @@ You may not use any loops.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Question-7">Question 7<a class="anchor-link" href="#Question-7">&#182;</a></h3><p><code>copied from above</code>: 'There are $n$ students in a university. Each student is taking $m$ courses. At the end of the semester, scores of each student in $m$ final exams are reported in an ndarray of shape $(m,n)$. where $m,n \geq 2$'</p>
-<p>Compute average and standard deviatoin of all marks in the semester.</p>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[286]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cumulative_avg</span><span class="p">(</span><span class="n">marks</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    args: ndarray</span>
-<span class="sd">    return: tuple of floats (mean, std_dev)</span>
-<span class="sd">    </span>
-<span class="sd">    Staff&#39;s solution contains one line of code. </span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">marks</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">marks</span><span class="p">)</span>
-    <span class="c1">### END SOLUTION</span>
+<h3 id="Ungraded-Question-7">Ungraded Question 7<a class="anchor-link" href="#Ungraded-Question-7">&#182;</a></h3><p>Can you see the importance of creating a <code>class</code> to implement a _Standard_Scaler?</p>
+<h2 id="Answer">Answer<a class="anchor-link" href="#Answer">&#182;</a></h2><p>To scale features in the test set we'd like to use the same mean and std of the train set as we assume the train and test set are taken from the same distribution. Not computing mean and std on test set is especially useful if your test set is very small or if you want to predict label of only one datapoint, for example. We can simply call 'get_params()' to get mean and std and scale on test set as well.</p>
+<div class="highlight"><pre><span></span><span class="n">_scaler</span><span class="o">.</span><span class="n">get_params</span><span class="p">()</span>
+<span class="p">(</span><span class="n">array</span><span class="p">([</span><span class="mf">3.46988686e+00</span><span class="p">,</span> <span class="mf">1.14039548e+01</span><span class="p">,</span> <span class="mf">1.11330508e+01</span><span class="p">,</span> <span class="mf">7.34463277e-02</span><span class="p">,</span>
+        <span class="mf">5.57259322e-01</span><span class="p">,</span> <span class="mf">6.32567232e+00</span><span class="p">,</span> <span class="mf">6.87997175e+01</span><span class="p">,</span> <span class="mf">3.76587401e+00</span><span class="p">,</span>
+        <span class="mf">9.43785311e+00</span><span class="p">,</span> <span class="mf">4.07042373e+02</span><span class="p">,</span> <span class="mf">1.82779661e+01</span><span class="p">,</span> <span class="mf">3.59701808e+02</span><span class="p">,</span>
+        <span class="mf">1.24211299e+01</span><span class="p">]),</span>
+ <span class="n">array</span><span class="p">([</span><span class="mf">8.30407703e+00</span><span class="p">,</span> <span class="mf">2.25765011e+01</span><span class="p">,</span> <span class="mf">6.92884344e+00</span><span class="p">,</span> <span class="mf">2.60867715e-01</span><span class="p">,</span>
+        <span class="mf">1.16626831e-01</span><span class="p">,</span> <span class="mf">7.18194456e-01</span><span class="p">,</span> <span class="mf">2.76262572e+01</span><span class="p">,</span> <span class="mf">2.12302684e+00</span><span class="p">,</span>
+        <span class="mf">8.62775916e+00</span><span class="p">,</span> <span class="mf">1.66286870e+02</span><span class="p">,</span> <span class="mf">2.25360235e+00</span><span class="p">,</span> <span class="mf">8.68019175e+01</span><span class="p">,</span>
+        <span class="mf">7.10234960e+00</span><span class="p">]))</span>
 </pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[280]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">42</span><span class="p">,</span><span class="mi">3</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">cumulative_avg</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">57</span><span class="p">,</span> <span class="mf">14.545904349105742</span><span class="p">))</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">24</span><span class="p">,</span><span class="mi">33</span><span class="p">,</span><span class="mi">4</span><span class="p">],[</span><span class="mi">43</span><span class="p">,</span><span class="mi">442</span><span class="p">,</span><span class="mi">34</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">cumulative_avg</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">580</span><span class="p">,</span> <span class="mf">154.91036834964348</span><span class="p">))</span>
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">&#182;</a></h3><p>Given an ndarray of shape $(1, m)$, essentially a row vector, containig $m$ integer elements $\{a_0, a_1, ...a_{m-1}\}$, construct an output ndarray such that $ith$ row of the output contains all <code>0's</code> except a <code>1</code> at index $a_i \ where \ i \in \{0,1,2..,{m-1}\}$. See the example below for clarifications:</p>
-<div class="highlight"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># input array of shape (1,3)</span>
-<span class="n">encode</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span> <span class="c1"># Function called</span>
-<span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span> <span class="c1"># output array. </span>
-       <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
-       <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]])</span>
-
-<span class="s2">&quot;The input array contains &#39;3&#39; at index 1, hence the 1st row  [0., 0., 0., 1.] in </span><span class="se">\</span>
-<span class="s2">the output array contains all 0&#39;s but 1 at index &#39;3&#39;. Similarly, for others.&quot;</span>
-</pre></div>
-
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">encode</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;args: ndarray of shape (1,m)</span>
-<span class="sd">       returns: ndarray of shape (m, y). Figuring out y is part of this problem.</span>
-<span class="sd">       </span>
-<span class="sd">       Staff&#39;s solution has 7-8  lines of code.</span>
-<span class="sd">       &#39;&#39;&#39;</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="n">_</span><span class="p">,</span> <span class="n">ncols_in_arr</span>  <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
-    <span class="c1"># desired array has shape (ncols_in_arr, max(arr) + 1)</span>
-    <span class="n">nrows_in_encod</span> <span class="o">=</span> <span class="n">ncols_in_arr</span>
-    <span class="n">ncols_in_encod</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>
-    
-    <span class="c1"># initialize to all zeros first.</span>
-    <span class="n">encoding_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="n">ncols_in_arr</span><span class="p">,</span> <span class="n">ncols_in_encod</span><span class="p">))</span>
-    
-    <span class="c1"># Append 1&#39;s at appropriate places. Using integer indexing</span>
-    <span class="n">row_idx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">nrows_in_encod</span><span class="p">)</span> <span class="c1"># e.g. gives [0,1,2,...,4] if nrows_in_encod is 5</span>
-    <span class="n">col_idx</span> <span class="o">=</span> <span class="n">arr</span>
-    <span class="n">encoding_</span><span class="p">[</span><span class="n">row_idx</span><span class="p">,</span> <span class="n">col_idx</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
-    
-    <span class="k">return</span> <span class="n">encoding_</span>
-    <span class="c1">### END SOLUTION</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="n">arr1</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                  <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
-                                  <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                  <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-
-
-<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">7</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-
-
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="n">arr2</span><span class="p">)</span> <span class="o">==</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">],</span>
-                                 <span class="p">[</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">]]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-
-
-<span class="n">arr3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">assert_equal</span><span class="p">(</span><span class="n">encode</span><span class="p">(</span><span class="n">arr3</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="p">(</span><span class="mi">10000</span><span class="p">,</span><span class="mi">10000</span><span class="p">))</span>
-
-<span class="c1">### END HIDDEN TESTS</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p><code>Aside</code>: If you think of the input array as an array of labels (cat (1), dog (0), chair (2) etc), then the output of the <code>encode()</code> function you implemented above is a very useful encoding ubiquitous in Machine Learning- commonly used to represent categorical variables. More on that in future.</p>
+<p>To this end, also, think about the other disign decisions we made while writing this class especially the arguments of get_scaled_input(self, _mean=None, _std=None).</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -14908,30 +14897,25 @@ You may not use any loops.</p>
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Question-9">Question 9<a class="anchor-link" href="#Question-9">&#182;</a></h3><p>Consider again ndarray of shape $(m,n)$ containing marks of the final exams for all students from Questions 5,6 and 7. Now, we'd like to make that marks matrix more readable/beautiful. Convert that ndarray into a pandas dataframe. Name the columns of the dataframe as follows: $"Final \ exam  \ x" where \ x \in \{1,2,..,n\}$
-Actually, it's possible to again convert this df back to numpy ndarray. Do so as well and return a tuple of dataframe and converted ndarray.</p>
+<h3 id="Question-8">Question 8<a class="anchor-link" href="#Question-8">&#182;</a></h3><h4 id="(3-points)"><code>(3 points)</code><a class="anchor-link" href="#(3-points)">&#182;</a></h4><h3 id="Zero--Mean-and-unit-variace-scaling.">Zero  Mean and unit variace scaling.<a class="anchor-link" href="#Zero--Mean-and-unit-variace-scaling.">&#182;</a></h3><p>It turns out to standard scale is common in ML and sklearn provides functionality to exactly do what you did in Question 6.</p>
+<p><a href="https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html">Sklearn Standard Scaler</a></p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[347]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">to_df</span><span class="p">(</span><span class="n">arr</span><span class="p">):</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">standard_scale_with_sklearn</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    arg: ndarray of shape (m,n)</span>
-<span class="sd">    return: tuple (df, ndarray)</span>
+<span class="sd">    args: ndarray (here, containing scaled features) of shape (m,n)</span>
+<span class="sd">    return: return standard scaled x of shape (m,n)</span>
 <span class="sd">    </span>
-<span class="sd">    Staff&#39;s solution contains 4 lines of code. </span>
 <span class="sd">    &#39;&#39;&#39;</span>
     
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="n">total_exams</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">_col_names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Final exam &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">exam_num</span><span class="p">)</span> <span class="k">for</span> <span class="n">exam_num</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">total_exams</span><span class="o">+</span><span class="mi">1</span><span class="p">)]</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">_col_names</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">df</span><span class="p">,</span> <span class="n">df</span><span class="o">.</span><span class="n">values</span>
-    <span class="c1">### END SOLUTION</span>
+    <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14942,24 +14926,17 @@ Actually, it's possible to again convert this df back to numpy ndarray. Do so as
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[381]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">arr1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">50</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">20</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-<span class="k">assert</span> <span class="nb">list</span><span class="p">(</span><span class="n">to_df</span><span class="p">(</span><span class="n">arr1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;Final exam 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 3&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 4&#39;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">to_df</span><span class="p">(</span><span class="n">arr1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">arr1</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">arr2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">],[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">],[</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">]])</span>
-<span class="k">assert</span> <span class="nb">list</span><span class="p">(</span><span class="n">to_df</span><span class="p">(</span><span class="n">arr2</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;Final exam 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 2&#39;</span><span class="p">]</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">to_df</span><span class="p">(</span><span class="n">arr2</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">arr2</span><span class="p">)</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-
-<span class="n">arr3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
-<span class="k">assert</span> <span class="p">(</span><span class="n">to_df</span><span class="p">(</span><span class="n">arr3</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">columns</span> <span class="o">==</span> <span class="p">[</span><span class="s1">&#39;Final exam 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 2&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 3&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 4&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;Final exam 5&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 6&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 7&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 8&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;Final exam 9&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 10&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 11&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 12&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;Final exam 13&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 14&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 15&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 16&#39;</span><span class="p">,</span>
-       <span class="s1">&#39;Final exam 17&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 18&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 19&#39;</span><span class="p">,</span> <span class="s1">&#39;Final exam 20&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
-<span class="c1">### END HIDDEN TESTS</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">assert</span> <span class="p">(</span><span class="n">x_train_raw_feats</span><span class="p">)</span><span class="o">.</span><span class="n">shape</span> <span class="o">==</span> <span class="n">x_train_raw_feats</span><span class="o">.</span><span class="n">shape</span>
+<span class="n">scaled_feats</span> <span class="o">=</span> <span class="n">standard_scale_with_sklearn</span><span class="p">(</span><span class="n">x_train_raw_feats</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">scaled_feats</span><span class="p">[:</span><span class="mi">2</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="o">-</span><span class="mf">0.41425879</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.50512499</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.29214218</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28154625</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.85108479</span><span class="p">,</span>
+         <span class="mf">0.14526384</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.365584</span>  <span class="p">,</span>  <span class="mf">1.08162833</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.74617905</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.11279004</span><span class="p">,</span>
+         <span class="mf">0.18727079</span><span class="p">,</span>  <span class="mf">0.39651419</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.01531611</span><span class="p">],</span>
+       <span class="p">[</span><span class="o">-</span><span class="mf">0.40200818</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.50512499</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.16208345</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.28154625</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.08796708</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.20840082</span><span class="p">,</span>  <span class="mf">0.13394078</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.48787608</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.39846419</span><span class="p">,</span>  <span class="mf">0.15008778</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">0.21208981</span><span class="p">,</span>  <span class="mf">0.3870674</span> <span class="p">,</span> <span class="o">-</span><span class="mf">0.05366252</span><span class="p">]]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -14967,6 +14944,12 @@ Actually, it's possible to again convert this df back to numpy ndarray. Do so as
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Remarks-on-Question-7">Remarks on Question 7<a class="anchor-link" href="#Remarks-on-Question-7">&#182;</a></h3><p>Odds are you called a fit method and a transform method. This interface in sklearn is uniform and you'll see it a lot in sklearn. Did you notice the similarities in design in our standard scaler class and sklearn's standard scaler. How does sklearn's standard scaler resolve the problem of scaling test set.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14984,25 +14967,22 @@ Actually, it's possible to again convert this df back to numpy ndarray. Do so as
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h3 id="Question-10">Question 10<a class="anchor-link" href="#Question-10">&#182;</a></h3><p>Return the number of rows in a dataframe.</p>
+<h3 id="Question-9">Question 9<a class="anchor-link" href="#Question-9">&#182;</a></h3><p><code>(2 points)</code></p>
+<p>As a quick quick check, verify if each scaled feature indeed has 0 mean and unit variance- or at least very close to 0 and 1.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[462]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">count_rows</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">    args: dataframe</span>
-<span class="sd">    return: int</span>
-<span class="sd">    </span>
-<span class="sd">    Staff&#39;s solution contains one line of code. </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">mean_and_std_of_each_feature</span><span class="p">(</span><span class="n">x_scaled</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; args: x_scaled-&gt; ndarray of shape (m,n)</span>
+<span class="sd">        return tuple (mean, std each of shape (n,)</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1">### BEGIN SOLUTION</span>
-    <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-    <span class="c1">### END SOLUTION    </span>
+    <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15013,19 +14993,16 @@ Actually, it's possible to again convert this df back to numpy ndarray. Do so as
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[463]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df1</span> <span class="o">=</span> <span class="n">to_df</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">count_rows</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span>
-<span class="c1">### BEGIN HIDDEN TESTS</span>
-<span class="n">df1</span> <span class="o">=</span> <span class="n">to_df</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1114</span><span class="p">,</span><span class="mi">3</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">count_rows</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1114</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_scaled_feats</span> <span class="o">=</span> <span class="n">standard_scale_with_sklearn</span><span class="p">(</span><span class="n">x_train_raw_feats</span><span class="p">)</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">mean_and_std_of_each_feature</span><span class="p">(</span><span class="n">x_scaled_feats</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="o">-</span><span class="mf">1.26232985e-16</span><span class="p">,</span> <span class="o">-</span><span class="mf">4.82978378e-17</span><span class="p">,</span>  <span class="mf">3.72473552e-15</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.68015549e-17</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">5.44322904e-15</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.59406386e-15</span><span class="p">,</span> <span class="o">-</span><span class="mf">6.96241558e-17</span><span class="p">,</span> <span class="o">-</span><span class="mf">2.24459497e-15</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">8.18554264e-17</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.89035855e-16</span><span class="p">,</span>  <span class="mf">1.72849807e-14</span><span class="p">,</span>  <span class="mf">8.11654573e-15</span><span class="p">,</span>
+        <span class="o">-</span><span class="mf">7.53320821e-16</span><span class="p">]))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 
-<span class="n">df1</span> <span class="o">=</span> <span class="n">to_df</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">11414</span><span class="p">,</span><span class="mi">4343</span><span class="p">)))[</span><span class="mi">0</span><span class="p">]</span>
-<span class="k">assert</span> <span class="n">count_rows</span><span class="p">(</span><span class="n">df1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">11414</span>
-
-<span class="c1">### END HIDDEN TESTS</span>
+<span class="k">assert</span> <span class="n">np</span><span class="o">.</span><span class="n">isclose</span><span class="p">(</span><span class="n">mean_and_std_of_each_feature</span><span class="p">(</span><span class="n">x_scaled_feats</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(([</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">])))</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
 </pre></div>
 
      </div>
@@ -15033,6 +15010,188 @@ Actually, it's possible to again convert this df back to numpy ndarray. Do so as
 </div>
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">x_train_scaled_feats</span> <span class="o">=</span> <span class="n">standard_scale_with_sklearn</span><span class="p">(</span><span class="n">x_train_raw_feats</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Train-SVR-on-scaled-input">Train SVR on scaled input<a class="anchor-link" href="#Train-SVR-on-scaled-input">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">svr_model_for_scaled_input</span> <span class="o">=</span> <span class="n">fit_model</span><span class="p">(</span><span class="n">x_train_scaled_feats</span><span class="p">,</span> <span class="n">y_train_raw_feats</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Compute-score-on-scaled-test-set">Compute score on scaled test set<a class="anchor-link" href="#Compute-score-on-scaled-test-set">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## test features scaled using the same &#39;scaler&#39;</span>
+<span class="n">x_test_scaled</span> <span class="o">=</span> <span class="n">standard_scale_with_sklearn</span><span class="p">(</span><span class="n">x_test_raw_feats</span><span class="p">)</span>
+<span class="n">svr_model_for_scaled_input</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test_scaled</span><span class="p">,</span> <span class="n">y_test_raw_feats</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>You should see a considerable higher score of ~0.65.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span> 
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Question-10">Question 10<a class="anchor-link" href="#Question-10">&#182;</a></h3><p><code>(5 points)</code></p>
+<h3 id="Curse-of-Dimensionality">Curse of Dimensionality<a class="anchor-link" href="#Curse-of-Dimensionality">&#182;</a></h3><h3 id="Extract-Best-Features">Extract Best Features<a class="anchor-link" href="#Extract-Best-Features">&#182;</a></h3><p>Extract best k features where $k &lt; n$ and n is number of previous number of features (i.e. features in x_train) such that score improves from 0.6516 (score will imporve very little though in this case). For this question, import the relevant sklearn function in the cell below. We've intentionally <code>not</code> imported it for you at top.</p>
+
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import Necessary sklearn packages here.</span>
+<span class="c1"># YOUR CODE HERE</span>
+<span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">select_k_best_feats</span><span class="p">(</span><span class="n">_data_dict</span><span class="p">,</span> <span class="n">_K</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;args: _data_dict-&gt; dict -&gt; with following keys:  x_train_scaled_feats, </span>
+<span class="sd">                                    y_train_raw_feats, x_test_scaled, y_test_raw_feats</span>
+<span class="sd">                                    </span>
+<span class="sd">       return: tuple -&gt; (score, k) -&gt; (float, int) </span>
+<span class="sd">               where k is the number of best features.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="c1"># unpack train and test data from _data_dict</span>
+    <span class="n">x_train_scaled_feats</span><span class="p">,</span> <span class="n">y_train_raw_feats</span><span class="p">,</span> <span class="n">x_test_scaled</span><span class="p">,</span> <span class="n">y_test_raw_feats</span> <span class="o">=</span> <span class="n">_data_dict</span><span class="p">[</span><span class="s1">&#39;x_train_scaled_feats&#39;</span><span class="p">],</span>\
+        <span class="n">_data_dict</span><span class="p">[</span><span class="s1">&#39;y_train_raw_feats&#39;</span><span class="p">],</span> <span class="n">_data_dict</span><span class="p">[</span><span class="s1">&#39;x_test_scaled&#39;</span><span class="p">],</span> <span class="n">_data_dict</span><span class="p">[</span><span class="s1">&#39;y_test_raw_feats&#39;</span><span class="p">],</span>
+    
+    <span class="c1"># trucated features of test x_test- currently set to None. (Used at the end)</span>
+    <span class="n">x_test_trucated</span> <span class="o">=</span> <span class="kc">None</span>
+    
+    <span class="c1"># Try different values of k and report which gives the most score.</span>
+    <span class="c1">##########################</span>
+    
+    <span class="s2">&quot;Once you determin it, overwrite the value of &#39;_K&#39; below with the one which gives highest score e.g. replace _K by 8&quot;</span>
+    <span class="n">_K</span> <span class="o">=</span> <span class="n">_K</span>
+    
+    <span class="c1">##########################</span>
+    
+    <span class="c1"># YOUR CODE HERE</span>
+    <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">()</span>
+    
+    <span class="n">svr_model_for_k_best_feats</span> <span class="o">=</span> <span class="n">svr_model_for_scaled_input</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_train_trucated</span><span class="p">,</span> <span class="n">y_train_raw_feats</span><span class="p">)</span>
+    
+
+    <span class="c1"># score on x_test_trucated and y_test_raw_feats</span>
+    <span class="n">_score</span> <span class="o">=</span> <span class="n">svr_model_for_k_best_feats</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">x_test_trucated</span><span class="p">,</span> <span class="n">y_test_raw_feats</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">_score</span><span class="p">,</span> <span class="n">_K</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Use this cell to do your scratch work. For example, you can call </span>
+<span class="c1"># the above function inside a for loop to print scores and corresponding values of k- thereby note the best k.</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">_data_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;x_train_scaled_feats&#39;</span> <span class="p">:</span> <span class="n">x_train_scaled_feats</span><span class="p">,</span> <span class="s1">&#39;y_train_raw_feats&#39;</span> <span class="p">:</span> <span class="n">y_train_raw_feats</span><span class="p">,</span> \
+              <span class="s1">&#39;x_test_scaled&#39;</span> <span class="p">:</span> <span class="n">x_test_scaled</span><span class="p">,</span> <span class="s1">&#39;y_test_raw_feats&#39;</span> <span class="p">:</span> <span class="n">y_test_raw_feats</span><span class="p">}</span>
+<span class="k">assert</span> <span class="nb">len</span><span class="p">(</span><span class="n">select_k_best_feats</span><span class="p">(</span><span class="n">_data_dict</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="o">==</span>  <span class="mi">2</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">select_k_best_feats</span><span class="p">(</span><span class="n">_data_dict</span><span class="p">,</span> <span class="mi">4</span><span class="p">)[</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">select_k_best_feats</span><span class="p">(</span><span class="n">_data_dict</span><span class="p">,</span> <span class="mi">4</span><span class="p">)[</span><span class="mi">0</span><span class="p">],</span> <span class="nb">float</span><span class="p">)</span>
+
+<span class="c1"># The tests above are superficial. Other tests are hidden as in every other question.</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We used fewer features- reduced computational expenses- and got higher score. Win-win.</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
