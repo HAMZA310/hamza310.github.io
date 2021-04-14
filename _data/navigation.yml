@@ -1,0 +1,79 @@
+- name: Introduction
+  unit: Introduction
+  link: /introduction
+  desc: Introduction to Python, Numpy, Pandas
+  test: Test 1
+  test-link: /test1
+  test-solution-link: /test1-solution
+- name: Feature Engineering
+  unit: Data Exploration
+  link: /feature-engineering
+  desc: Extract Data to DataFrame, Scaling, Transformation, Selection, Introduction to Sklearn
+  test: Test 2
+  test-link: /test2
+  test-solution-link: /test2-solution
+- name: Linear Regression
+  unit: Regression
+  link: /linear-regression
+  desc: Overfitting & Regularization (L1, L2), Split Data, Evaluate (RMSE and R2)
+  test: Test 3
+  test-link: /test3
+  test-solution-link: /test3-solution
+- name: Logistic Regression
+  unit: Classification
+  link: /logistic-regression
+  desc: Nearest Neighbour, Evaluation (Accuracy, Confusion Matrix)
+- name: SVM
+  unit: Classification
+  link: /svm
+  desc: SVM (Linear vs Nonlinear), Decision Trees, Split data (k-Fold Cross Validation) Model Selection
+  test: Test 4
+  test-link: /test4
+  test-solution-link: /test4-solution
+- name: Clustering
+  unit: Clustering
+  link: /clustering
+  desc: K-Means, Nearest Neighbor
+  test: Test 5
+  test-link: /test5
+  test-solution-link: /test5-solution
+- name: Dimensionality Reduction
+  unit: Dimensionality Reduction
+  link: /dimensionality-reduction
+  desc: PCA, SVD
+  test: Test 6
+  test-link: /test6
+  test-solution-link: /test6-solution
+- name: Advanced Experiments
+  unit: Advanced Experiments
+  link: /advanced-experiments
+  desc: Imbalanced Data, Undersampling, Oversampling Evaluation, F1 (Recall & Precision), ROCGridSearch (Hyperparameters)
+  test: Test 7
+  test-link: /test7
+  test-solution-link: /test7-solution
+- name: Ensemble Learning
+  unit: Ensemble Learning
+  link: /ensemble-learning
+  desc: Bagging, Voting, Stacking, RandomForest Boosting, Xgboost
+  test: Test 8
+  test-link: /test8
+  test-solution-link: /test8-solution
+- name: Natural Language Processing
+  unit: Natural Language Processing
+  link: /nlp
+  desc: Feature Extraction, Bag of Words, N-grams, Features Transformation, Hashing, TF-IDF, Text classification
+  test: None
+- name: Natural Language Processing
+  unit: Natural Language Processing
+  link: /nlp-continued
+  desc: Word Embedding Similarity Measures, Text classification
+  test: Test 9
+  test-link: /test9
+  test-solution-link: /test9-solution
+- name: Anomaly Detection
+  unit: Anomaly Detection
+  link: /anamoly-detection
+  desc: OneClass SVM, Isolation Forest
+  test: Test 10
+  test-link: /test10
+  test-solution-link: /test10-solution
