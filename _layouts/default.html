@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+
 	<title>Practical Machine Learning</title>
 	<meta name="viewport" content="width-device-width">
 	<style>
@@ -10,6 +12,11 @@
 			padding-bottom: 30px;
 			text-align: center;
 			font-size: 40px;
+		}
+		.footer-padding {
+			display: flex;
+			flex-wrap: wrap;
+			align-content: center;
 		}
 	</style>
 </head>
@@ -23,9 +30,20 @@
 		</div>
 		
 		<div class="container">
+			<!-- Load Page Content -->
 			<div>
 				{{ content }}
 			</div>
+
+			<!-- Footer -->
+				<footer class="page-footer font-small blue">
+					<div class="footer-padding">
+						<a href="https://github.com/HAMZA310/hamza310.github.io"><i class="fab fa-github" style='font-size:20px'></i> Practical Machine Learning </a>
+					</div>
+					<div class="footer-padding" style="padding-bottom: 20px;">
+						<a href="https://www.linkedin.com/in/hamza-liaqat-9429b1109/"><i class="fab fa-linkedin-in" style='font-size:20px'></i> Hamza </a>
+					</div>
+				</footer>
 		</div>
 </body>
 </html>
