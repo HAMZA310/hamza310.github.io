@@ -23,6 +23,7 @@
   unit: Classification
   link: /logistic-regression
   desc: Nearest Neighbour, Evaluation (Accuracy, Confusion Matrix)
+  test: None
 - name: SVM
   unit: Classification
   link: /svm
