@@ -3,6 +3,10 @@
 ## Overview
 "Practical Machine Learning" offers a comprehensive guide for programmers who are new to the field of Machine Learning. This book is crafted to help build a strong foundation for implementing real-world Machine Learning solutions without requiring prior knowledge in Linear Algebra, Probability, or Calculus. It emphasizes practical application, with sufficient theory covered as needed. Readers are also directed to external resources for deeper understanding. The prerequisite for this book is a good programming background, preferably in Python, with Numpy and Scikit-Learn as the primary libraries.
 
+## Book Availability
+This book is hosted using GitHub Pages and is freely accessible at [https://hamza310.github.io/](https://hamza310.github.io/).
+
+
 ## Why Did the Author Write This Book?
 Many programmers and developers, lacking a background in Machine Learning, often rely on quick, pre-written solutions from varied sources. This approach can lead to suboptimal and bug-prone solutions when applied to real-world problems. Debugging in Machine Learning requires a solid understanding of the underlying principles. This book aims to bridge that knowledge gap, providing the necessary insights to write effective Machine Learning solutions, including a look under the hood of Scikit-Learn.
 
