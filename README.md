@@ -1,35 +1,20 @@
+# About This Book
+
+## Overview
+"Practical Machine Learning" offers a comprehensive guide for programmers who are new to the field of Machine Learning. This book is crafted to help build a strong foundation for implementing real-world Machine Learning solutions without requiring prior knowledge in Linear Algebra, Probability, or Calculus. It emphasizes practical application, with sufficient theory covered as needed. Readers are also directed to external resources for deeper understanding. The prerequisite for this book is a good programming background, preferably in Python, with Numpy and Scikit-Learn as the primary libraries.
+
+## Why Did the Author Write This Book?
+Many programmers and developers, lacking a background in Machine Learning, often rely on quick, pre-written solutions from varied sources. This approach can lead to suboptimal and bug-prone solutions when applied to real-world problems. Debugging in Machine Learning requires a solid understanding of the underlying principles. This book aims to bridge that knowledge gap, providing the necessary insights to write effective Machine Learning solutions, including a look under the hood of Scikit-Learn.
+
+## Learning by Doing
+"The best way of learning about anything is by doing." This principle is at the heart of this book. It features exercises in the form of 10 Tests designed to deepen your understanding of Machine Learning. These 'Tests' are educational tools rather than assessments. Each test comes in two versions, one with solutions and one without, to encourage self-challenge before consulting the answers. Through these exercises, you'll gain hands-on experience with various Machine Learning applications, including Facial Recognition, Image Compression, Stock Price Prediction, and more, catering to a wide range of backgrounds and skill levels.
+
+## Is This Book About Deep Learning?
+While Deep Learning is touched upon, especially in the context of Natural Language Processing, it is not the primary focus of this book. The emphasis is more on foundational Machine Learning techniques and applications.
+
+## About the Author
+The author is an experienced freelance Machine Learning, ML Ops, and Data Engineer, providing Artificial Intelligence expertise to companies worldwide.
+
 ---
-layout: page
-title: About This Book
-permalink: /about-this-book/
----
 
-
-The applications of Machine Learning are endless. 
-“Practical Machine Learning” is a resource intended for programmers with no background in Machine Learning yet are interested in building a solid foundation to adequately implement real-world Machine Learning Solutions. No background in Linear Algebra, Probability, or Calculus is assumed. Sufficient Machine Learning theory is covered where required; The keen readers are also referred to external resources where needed. The only prerequisite is a good programming background preferably in Python. 
-The primary libraries used are Numpy and Scikit-Learn.
-
-
-#### Why Did the Author Write this Book
-Programmers and developers- with no background in Machine Learning- often resort to searching for quick pre-written solutions by taking Machine Learning code from disparate sources without adequately understanding the code. This approach results in inelegant solutions which don’t sufficiently solve the real-world problems. Moreover, bugs can easily be introduced in solutions when placed in the new environment, and debugging Machine Learning requires satisfactory knowledge of Machine Learning: one needs enough understanding of how things are working beneath the hood. This book aims to fill that gap i.e. it aims to build the foundation necessary to write good Machine Learning solutions. For example, where educational, we will see how Scikit-Learn is working under the hood.
-
-#### Learning By Doing
-“The best way of learning about anything is by doing”. This could not be more true for learning to implement Machine Learning solutions.
-Exercises (in the form of 10 Tests) are the backbone of this book. They’ll make you think deeply about Machine Learning. ‘Tests’ is a misnomer; They are primarily there to teach you- not to test you. Each test has two versions: one with the solution and one without it. The version with the solution is meant to be used guardedly since reading the solutions will defeat the purpose if you do not challenge yourself first. 
-Facial Recognition with dimensionality reduction (Test 6), image compression using Clustering (Test 5), stocks price prediction (Test 3), predicting political inclination of MPs of UK based on their tweets (Test 9), and recognizing a digit from its image (Test 4) are a few of the great applications of Machine Learning the reader will get hands-on experience with. Thereby, building a strong Machine Learning base.
-The exercises are created keeping in mind readers with diverse backgrounds. Even if you’ve years of experience in Machine Learning, the odds are the exercises will challenge you and make you ponder on a different level.
-
-#### Is This Book About Deep Learning
-Though Deep Learning is briefly discussed and used in the Natural Language Processing module, Deep Learning is not the focus of this book. 
-
-#### About the Author
-The author is a freelance Machine Learning, ML Ops, and data engineer who- as an Artificial Intelligence expert- has been providing services to companies of various sizes all over the world.
-
-<br>
-This online version of the book will remain available for free.<br>
-If you notice any typos or have any suggestions, feel free to open a [pull request here](https://github.com/HAMZA310/hamza310.github.io). 
-
-
-
-
-
+This book is available online for free. For feedback or suggestions, please feel free to open a pull request.
